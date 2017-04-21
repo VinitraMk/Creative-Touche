@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+<title>Creative Touche</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width initial scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Tangerine);
+
+.text--transparent {
+  fill: transparent;
+}
+
+.anim-shape {
+  -webkit-transform-origin: 0x 150px;
+  -ms-transform-origin: 0x 150px;
+  transform-origin: 0x 150px;
+  -webkit-transform: scale(0, 1) translate(0, 0);
+  -ms-transform: scale(0, 1) translate(0, 0);
+  transform: scale(0, 1) translate(0, 0);
+  -webkit-animation: moving-panel 3s infinite alternate;
+  animation: moving-panel 3s infinite alternate;
+}
+
+.colortext .anim-shape:nth-child(1) {
+  fill: #0E1826;
+}
+
+.colortext .anim-shape:nth-child(2) {
+  fill: #166973;
+}
+
+.colortext .anim-shape:nth-child(3) {
+  fill: #65BFA6;
+}
+
+.colortext .anim-shape:nth-child(4) {
+  fill: #F2CD5C;
+}
+
+.colortext .anim-shape:nth-child(5) {
+  fill: #F26444;
+}
+
+@-webkit-keyframes moving-panel {
+  100% {
+    -webkit-transform: scale(1, 1) translate(20px, 0);
+    transform: scale(1, 1) translate(20px, 0);
+  }
+}
+
+@keyframes moving-panel {
+  100% {
+    -webkit-transform: scale(1, 1) translate(20px, 0);
+    transform: scale(1, 1) translate(20px, 0);
+  }
+}
+
+/* Other stuff */
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #EEE;
+  font-family: 'Tangerine', serif;
+  font-size:130px;
+  /*text-transform: uppercase;*/
+}
+
+svg{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.about{
+    font-family:'Tangerine',serif;
+    text-align:center;
+}
+.about-desc{
+    font-family:'Open Sans',sans-serif;
+    font-size:16px;
+    font-style:italic;
+    padding-bottom:30px;
+    padding-left:30px;
+    padding-right:30px;
+}
+.panel{
+    display: inline-block;
+}
+.parallax{
+    position:relative;
+    opacity:0.65;
+    background-attachment:fixed;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url("assets/images/misc/banner-niagara3.jpg");
+    min-height:40vh;
+    min-width:60vw;
+}
+.house{
+    margin-top:30px;
+    /*margin-left: 23%;*/
+    margin-left:20vw;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 18px;
+    font-style: italic;
+}
+.office
+{
+    margin-top:30px;
+    margin-left:57vw;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 18px;
+    font-style: italic;
+}
+.glyphicon
+{
+    font-size:50px;
+}
+.modal-content{
+    margin-top:15vh;
+}
+#carousel-example-generic-house, #carousel-example-generic-office{
+    background-color:#000000;
+}
+</style>
+</head>
+<body>
+<svg viewBox="0 0 600 300">
+
+  <!-- Symbol with text -->
+  <symbol id="s-text">
+    <text text-anchor="middle"
+          x="50%"
+          y="50%"
+          dy=".35em"
+          class="text--line"
+          >
+      Creative Touche` 
+    </text>    
+  </symbol>
+
+  <!-- Clippath  with text -->
+  <clippath id="cp-text">
+    <text text-anchor="middle"
+          x="50%"
+          y="50%"
+          dy=".35em"
+          class="text--line"
+          >
+      Creative Touche`
+    </text>
+  </clippath>
+
+  <!-- Group with clippath for text-->
+  <g clip-path="url(#cp-text)" class="colortext">
+    <!-- Animated shapes inside text -->
+    <rect
+          width="100%"
+          height="100%"         
+          class="anim-shape"
+          ></rect>
+    <rect
+          width="80%"
+          height="100%"         
+          class="anim-shape"
+          ></rect>
+    <rect
+          width="60%"
+          height="100%"         
+          class="anim-shape"
+          ></rect>
+    <rect
+          width="40%"
+          height="100%"         
+          class="anim-shape"
+          ></rect>
+    <rect
+          width="20%"
+          height="100%"         
+          class="anim-shape"
+          ></rect>
+  </g>
+
+  <!-- Transparent copy of text to keep
+         patterned text selectable -->
+  <use xlink:href="#s-text"
+       class="text--transparent"></use>
+
+</svg>
+<div class="about">
+    <h1>About Creative Touche`</h1>
+    <div class="panel">
+        <div class="parallax"></div>
+    </div>
+</div>
+<div class="about-desc">
+	<h2>Interior Designers</h2>
+    <p>We are basically Interior Designers  since last 26 years ie., since 1991.  We have a full team of Carpenters, Masons, Painters, Electricians, Plumbers & 
+    other TEAM related to interior designing.</p>
+    <p>Along with undertaking Interior Designing we started doing Interior Designing in accordance with Vaastu Shastra  in the year 1997 ie since last 20 years to 
+    give Value Addition to our Clients.</p>
+    <p>We spend lakhs of money in doing our house to live in the house happily and we want all of our Family Members to achieve their POTENTIAL. Vaastu Shastra 
+    Science creates a conducive atmosphere of UNITY, LOVE, WEALTH & PROSPERITY.</p>
+    <p>We also give Vastu Shastra Consultancy for Residences, Flats, Offices, Shops, Land & Building, Factories, etc. As per our customer's requirement.we can 
+    design your interior either as per vastu or without vastu.  We believe that any house or offices designed as per VAASTU SHASTRA produces excellent results. You 
+    can visit our website <a href="http://skywindsystems.com/demo/VaastuTreasure/">www.vaastutreasure.com</a> to know more about Vaastu Shastra, What is Vaastu? 
+    And Why Vaastu Shastra Science to be followed while doing Interior Designing.</p>
+    <h3>Interior Designing</h3>
+    We undertake Interior Designing Contracts of Residences, Offices, Flats, Bungalows, Shops, Land & Building, Factories, etc.<br>
+	We do the following work related to Interior Designing as per our Customer's Requirement:
+    <ul>
+        <li><b>CIVIL WORK</b> - Flooring, Wall Tiling, Kitchen Platform and other Construction works.</li>
+        <li><b>PAINTING</b> - Asian Paints Acrylic Distemper, Plastic Emulsion, Royale Luxury Emulsion.</li>
+        <li><b>PLUMBING</b> - Concealed Plumbing for Kitchen, W.C and Bathroom.</li>
+        <li><b>FURNITURE</b> - All types of Carpentry Work like Bed, Wardrobes, Wall Unit, etc.</li>
+        <li><b>ELECTRICAL</b> - Concealed electrical wiring using reputed branded products.</li>
+        <li><b>NETWORKING</b> - Complete CAT 5/CAT 6 Cable networking for IT Companies.</li>
+        <li><b>OTHER WORK</b> - Wall Paper, Vinyl Flooring, Vertical Blinds, Wooden Flooring.</li>
+        <li><b>PARTITION</b> - Aluminium Section with Powder Coating and Anodising.</li>
+        <li><b>POP FALSE & MODULAR FALSE CEILING</b></li>
+    </ul>
+    <h3>Our Specialities</h3>
+    <ul>
+        <li>Designing your place as per your requirement and carefully looking into all the aspect of VAASTUSHASTRA.</li>
+        <li>Designing every room as per Vaastushastra..</li>
+        <li>Using Color to give good ambience but to remain within Vaastushastra. For ex. We should never use Blue Color in the South Wall. Such subtle things will 
+        be taken care of while designing your home.</li>
+        <li>Even the portrait you will be hanging on the wall will be approved by us. For ex; certain images should not be displaced in a house. “Lonely Lady”, “War
+	 Scene”, “Titanic Ship”.</li>
+	<li>Integrity & Transparency in our dealings.</li>
+	<li>Excellent Quality & Lifelong Service.</li>
+        <li>Elegant Design & Excellent Workmanship.</li>
+	<li>Only Company doing Interior Designing in accordance with Vaastushastra.</li>
+	<li>We value your hard earned money and hence the insistence on Vaastushastra.</li>
+	<li>We believe that when you spend lakhs in setting up a Company, the Company should run for many years and should grow inspite of cut throat competition.</li>
+    </ul>
+</div>
+<!--Gallery-->
+<div class="gallery">
+    <h1 align="center">Gallery</h1>
+    <div class="house">
+        <input type="image" src="assets/images/misc/Image202.jpg" tabindex="-1" class="img-rounded" width="304" height="236" data-toggle="modal" 
+        data-target="#housemodal"><br>
+        <h3 style="margin-left:70px">House Interior</h3>
+        <div id="housemodal" class="modal fade" role="dialog" align="center">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="height:500px;">
+                    <div id="carousel-example-generic-house" class="carousel slide" data-ride="carousel" data-interval="2000">
+                        <!-- Wrapper for carousel -->
+                        <div class="carousel-inner" style="height:500px;">
+                            <div class="item active">
+                                <img class="img-responsive" src="http://imgur.com/gI8hlsd.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/K36OFjP.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/ZNnNNUG.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/5pzzi6U.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/ftAvmpf.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/LhQ3sta.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/9F3k9Wh.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/nGaNGoq.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/7cVQWyX.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/yNOYE0G.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/xFsPf6x.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/2hWvyxY.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/sDKwY3A.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/IPD2Fq3.jpg">
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic-house" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-menu-left" style="margin-top:250px"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic-house" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-menu-right" style="margin-top:250px"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="office">
+        <input type="image" src="assets/images/misc/Image201.jpg" class="img-rounded" width="304" height="236" data-toggle="modal" 
+        data-target="#officemodal"/><br>
+        <h3 style="margin-left:70px;">Office Interior</h3>
+        <div id="officemodal" class="modal fade" role="dialog" align="center" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="height:500px;">
+                    <div id="carousel-example-generic-office" class="carousel slide" data-ride="carousel" data-interval="2000">
+                        <!-- Wrapper for carousel -->
+                        <div class="carousel-inner" style="height:500px;">
+                            <div class="item active">
+                                <img class="img-responsive" src="http://imgur.com/SeJI4QS.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/UVRlKAS.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/PFC6Psd.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/lhyL7e0.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/bW5LRpi.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/0MuVtJd.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/mFnbkXy.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/1BK2MRN.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="http://imgur.com/h0EvP8o.jpg">
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic-office" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-menu-left" style="margin-top:250px"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic-office" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-menu-right" style="margin-top:250px"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
