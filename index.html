@@ -4,13 +4,31 @@
 <head>
 <title>Creative Touche</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width initial scale=1">
+<meta name="viewport" content="width=device-width, initial scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function()
+        {
+            $(window).scroll(function()
+            {
+                $('.fadein').each( function(j)
+                {
+                    var top_of_object= $(this).position().top;
+                    var bottom_of_window= $(window).scrollTop() + $(window).height();
+                    if(bottom_of_window > top_of_object)
+                    { 
+                        $(this).animate({ 'opacity':'1' },1000);
+                    } 
+                });
+            });
+        });
 </script>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Tangerine);
@@ -81,7 +99,7 @@ svg{
   width: 100%;
   height: 100%;
 }
-.about-desc,.specialities,.about-intd{
+.fadein{
     font-family:'Open Sans',sans-serif;
     font-size:16px;
     font-style:italic;
@@ -90,6 +108,7 @@ svg{
     margin-right:25%;
     height: 100%;
     text-align: center;
+    opacity: 0;
 }
 
 .panel{
@@ -105,6 +124,9 @@ svg{
     background-image: url("assets/images/misc/banner-niagara3.jpg");
     min-height:40vh;
     min-width:60vw;
+}
+#gallery{
+    font-family:'Tangerine',serif;
 }
 
 .house,.office{
@@ -216,15 +238,7 @@ svg{
        class="text--transparent"></use>
 
 </svg>
-<!--
-<div class="about">
-    <h1>About Creative Touche`</h1>
-    <div class="panel">
-        <div class="parallax"></div>
-    </div>
-</div>
--->
-<div class="about-desc">
+<div class="fadein">
 	<h2>Interior Designers</h2>
     <p> We are basically Interior Designers  since last 26 years ie., since 1991.  We have a full team of Carpenters, Masons, Painters, Electricians, Plumbers & 
     other TEAM related to interior designing.</p>
@@ -237,7 +251,7 @@ svg{
     can visit our website <a href="http://skywindsystems.com/demo/VaastuTreasure/">www.vaastutreasure.com</a> to know more about Vaastu Shastra, What is Vaastu? 
     And Why Vaastu Shastra Science to be followed while doing Interior Designing.</p>
 </div>
-<div class="about-intd">
+<div class="fadein">
     <h3>Interior Designing</h3>
     We undertake Interior Designing Contracts of Residences, Offices, Flats, Bungalows, Shops, Land & Building, Factories, etc.<br>
 	We do the following work related to Interior Designing as per our Customer's Requirement:
@@ -246,12 +260,10 @@ svg{
         <b>PLUMBING</b> - Concealed Plumbing for Kitchen, W.C and Bathroom.<br><br>
         <b>FURNITURE</b> - All types of Carpentry Work like Bed, Wardrobes, Wall Unit, etc.<br><br>
         <b>ELECTRICAL</b> - Concealed electrical wiring using reputed branded products.<br><br>
-        <b>NETWORKING</b> - Complete CAT 5/CAT 6 Cable networking for IT Companies.<br><br>
-        <b>OTHER WORK</b> - Wall Paper, Vinyl Flooring, Vertical Blinds, Wooden Flooring.<br><br>
         <b>PARTITION</b> - Aluminium Section with Powder Coating and Anodising.<br><br>
         <b>POP FALSE & MODULAR FALSE CEILING</b>
 </div>
-<div class="specialities">
+<div class="fadein">
     <h3>Our Specialities</h3>
     Designing your place as per your requirement and carefully looking into all the aspect of VAASTUSHASTRA.<br><br>
     Designing every room as per Vaastushastra.<br><br>
@@ -264,10 +276,11 @@ svg{
     Elegant Design & Excellent Workmanship.<br><br>
     Only Company doing Interior Designing in accordance with Vaastushastra.<br><br>
     We value your hard earned money and hence the insistence on Vaastushastra.<br><br>
-    We believe that when you spend lakhs in setting up a Company, the Company should run for many years and should grow inspite of cut throat competition.<br><br>
+    We believe that when you spend lakhs in setting up a Company, the Company should run for many years and should grow inspite of cut throat competition.<br>
+        <br>
 </div>
 <!--Gallery-->
-<h1 align="center">Gallery</h1>
+<h1 align="center" style="font-family: 'Tangerine','serif'">Gallery</h1>
 <div id="gallery">
     <div class="house">
         <div class="house-grid">
