@@ -30,6 +30,23 @@ $(document).ready(function()
             });
         });
 </script>
+<script type="text/javascript">
+window.onscroll=function(){ scrollFunction() };
+function scrollFunction(){
+    if(document.body.scrollTop > 20 || 
+            document.documentElement.scrollTop >20){
+        document.getElementById("topbtn").style.display="block";
+    }
+    else{
+        document.getElementById("topbtn").style.display="none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop=0;
+    document.documentElement.scrollTop=0;
+}
+</script>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Tangerine);
 
@@ -91,7 +108,6 @@ body {
   background: #EEE;
   font-family: 'Tangerine', serif;
   font-size:130px;
-  /*text-transform: uppercase;*/
 }
 
 svg{
@@ -113,30 +129,43 @@ svg{
     float:inline-end;
 }
 
-.panel{
-    display: inline-block;
-}
-.parallax{
-    position:relative;
-    opacity:0.65;
-    background-attachment:fixed;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-image: url("assets/images/misc/banner-niagara3.jpg");
-    min-height:40vh;
-    min-width:60vw;
+.footer{
+    position: relative;
+    right:0;
+    bottom:0;
+    left:0;
+    padding: 1rem;
+    text-align: center;
+    font-family:'Open Sans',sans-serif;
+    font-size:14px;
+    font-style:italic;
+    height:100%;
+    width:100%;
+    clear:left;
 }
 .gallery{
     font-family:'Tangerine',serif;
+    position:relative;
 }
 
+#topbtn{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index=99;
+}
 .house,.office{
     font-family: 'Open Sans',sans-serif;
     font-size: 0px;
     font-style: italic;
     text-align:center;
 }
+
+.lastpage{
+    position: relative;
+}
+
 .contact{
     font-family: 'Open Sans',sans-serif;
     font-size: 16px;
@@ -147,21 +176,19 @@ svg{
     padding-right:1%;
     border: 1px solid gray;
     background:#d6d6d6;
+    margin-top:15vh;
 }
 
-#gallery{
-    position: relative;
-}
 .house-grid,.office-grid{
     width: 80%;
     margin: 0 auto;
 }
 .card-meta {
-        height:30px;
+    height:30px;
 }
 .card {
-        float:left;
-        width:25%;
+    float:left;
+    width:25%;
 }
 .card-img-container {
         position:relative;
@@ -186,9 +213,14 @@ svg{
     background-color:#000000;
 }
 
+.large-space{
+    height:40vh;
+    clear:left;
+}
 </style>
 </head>
 <body>
+<img class="logo" onclick="topFunction()" id="topbtn" src="assets/images/misc/arrowUp.png"/>
 <svg viewBox="0 0 600 300">
 
   <!-- Symbol with text -->
@@ -282,8 +314,6 @@ svg{
     Designing every room as per Vaastushastra.<br><br>
     Using Color to give good ambience but to remain within Vaastushastra. For ex. We should never use Blue Color in the South Wall. Such subtle things will 
     be taken care of while designing your home.<br><br>
-    Even the portrait you will be hanging on the wall will be approved by us. For ex: certain images should not be displaced in a house. “Lonely Lady”, “War
-    Scene”, “Titanic Ship”.<br><br>
     Integrity & Transparency in our dealings.<br><br>
     Excellent Quality & Lifelong Service.<br><br>
     Elegant Design & Excellent Workmanship.<br><br>
@@ -601,13 +631,20 @@ svg{
         </div>
     </div>
 </div>
-<div class="contact">
-    <h3><strong>Contact us</strong></h3>
-    <hr style="border-color:#a9a9a9">
-    <p>S V Muralikrishnan <br>
-    Interior Designers & Vastu Shastra Consultant<br>
-    Mobile No: 9820477563<br>
-    Please contact us anytime! We look forward to hearing from you.</p>
+<!-- Last Page -->
+<div class="lastpage">
+    <div class="contact">
+        <h3><strong>Contact us</strong></h3>
+        <hr style="border-color:#a9a9a9">
+        <p>S V Muralikrishnan <br>
+        Interior Designers & Vastu Shastra Consultant<br>
+        Mobile No: 9820477563<br>
+        Please contact us anytime! We look forward to hearing from you.</p>
+    </div>
+    <div class="large-space"></div>
+    <div class="footer">
+        <strong>Thank you for visiting our website.</strong>
+    </div>
 </div>
 </body>
 </html>
