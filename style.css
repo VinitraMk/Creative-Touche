@@ -108,6 +108,11 @@ svg{
     height:5%;
     width:5%;
 }
+
+.carousel-inner{
+    max-width:500px; !important;
+    max-height:500px !important;
+}
 .house,.office{
     font-family: 'Open Sans',sans-serif;
     font-size: 0px;
@@ -145,7 +150,7 @@ svg{
     padding-top:77%;
     margin: 5%;
 }
-.card-img {
+.card-img, .card-img-office {
     position:absolute;
     top:0;
     left:0;
@@ -167,6 +172,3 @@ svg{
     height:40vh;
     clear:left;
 }
-
-
-
