@@ -186,7 +186,7 @@ function slideShowHouse(){
 		if (divwidth < 769) { 
             var pct = (img_h/img_w) * 105; 
         } /* show full image, plus a little padding, if on static mobile view */
-		else { var pct = 60; } /* this is the HEIGHT as percentage of the current div WIDTH. you can change it to show more (or less) of your image */
+		else { var pct = 85; } /* this is the HEIGHT as percentage of the current div WIDTH. you can change it to show more (or less) of your image */
 		var newheight = Math.round(divwidth * (pct/100));
 		newheight = newheight  + 'px';
 		div.height(newheight);
