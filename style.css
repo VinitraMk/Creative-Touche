@@ -195,9 +195,9 @@ svg{
     height:85vh;
 }
 
-@media only screen and (max-device-width:1024px) {
+@media only screen and (max-width:1024px) {
     .bgimg1, .bgimg2, .bgimg3 {
-        background-attachment:inherit;
+        background-attachment:scroll;
     }
 }
 
@@ -209,7 +209,7 @@ svg{
     background-image:url("assets/images/living_room1.jpg");
     background-attachment:fixed;
     background-repeat:no-repeat;
-    background-size:cover;
+    background-size:100% auto;
     overflow:hidden;
     display:table;
 }
