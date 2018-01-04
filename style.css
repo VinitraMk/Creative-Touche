@@ -186,15 +186,21 @@ svg{
     margin-left:2vw;
 }
 
-@media screen and (min-width:320px) {
+
+.bgimg1, .bgimg2, .bgimg3 {
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:85vw;
+    height:85vh;
+}
+
+@media only screen and (max-device-width:1024px) {
     .bgimg1, .bgimg2, .bgimg3 {
-        background-attachment:fixed;
-        background-repeat:no-repeat;
-        background-size:cover;
-        width:85vw;
-        height:85vh;
+        background-attachment:scroll;
     }
 }
+
 .writing {
     margin:0;
     width:100%;
