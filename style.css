@@ -203,7 +203,7 @@ svg{
 
 
 
-@media only screen and (max-width:1024px) {
+@media only screen and (max-device-width: 768px) {
     #bgimg {
         background-attachment:fixed;
     }
