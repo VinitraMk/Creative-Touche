@@ -188,16 +188,24 @@ svg{
 
 
 .bgimg1, .bgimg2, .bgimg3 {
-    background-attachment:fixed;
+    /*background-attachment:fixed;
     background-repeat:no-repeat;
-    background-size:100% auto;
+    background-size:100% auto;*/
     width:85vw;
     height:85vh;
 }
 
+#bgimg {
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:100% auto;
+}
+
+
+
 @media only screen and (max-width:1024px) {
-    .bgimg1, .bgimg2, .bgimg3 {
-        background-attachment:scroll;
+    #bgimg {
+        background-attachment:fixed;
     }
 }
 
