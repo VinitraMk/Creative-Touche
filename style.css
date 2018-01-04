@@ -190,14 +190,14 @@ svg{
 .bgimg1, .bgimg2, .bgimg3 {
     background-attachment:fixed;
     background-repeat:no-repeat;
-    background-size:cover;
+    background-size:100% auto;
     width:85vw;
     height:85vh;
 }
 
 @media only screen and (max-device-width:1024px) {
     .bgimg1, .bgimg2, .bgimg3 {
-        background-attachment:scroll;
+        background-attachment:inherit;
     }
 }
 
