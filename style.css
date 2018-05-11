@@ -170,22 +170,35 @@ svg{
 }
 
 .bgimg1 {
-    background:url("assets/images/living_room.jpg");
+    /*background:url("assets/images/living_room.jpg");*/
+    background:url("assets/images/parallax/100_3696.JPG");
     float:left;
     margin-left:2vw;
 }
 
 .bgimg2 {
-    background:url("assets/images/bedroom.jpg");
+    /*background:url("assets/images/bedroom.jpg");*/
+    background:url("assets/images/parallax/Image(202).jpg");
     float:right;
     margin-right:2vw;
 }
 .bgimg3 {
-    background:url("assets/images/kitchen.jpg");
+    background:url("assets/images/parallax/100_1049.JPG");
     float:left;
     margin-left:2vw;
 }
 
+#bgimg1 {
+    background-image:url("assets/images/parallax/100_2621.JPG");
+}
+
+#bgimg2 {
+    background-image:url("assets/images/parallax/100_3650.JPG");
+}
+
+#bgimg3 {
+    background-image:url("assets/images/parallax/100_2644.JPG");
+}
 
 .bgimg1, .bgimg2, .bgimg3 {
     /*background-attachment:fixed;
