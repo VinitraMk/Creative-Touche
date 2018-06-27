@@ -6,11 +6,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <!--
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 </script>
@@ -32,6 +32,12 @@
                 });
             });
         });*/
+</script>
+<script type="text/javascript">
+/*
+jQuery(document).ready(function() {
+    jQuery("#lastpage").load("contact-us.html");
+});*/
 </script>
 <script type="text/javascript">
 window.onscroll=function(){ scrollFunction() };
@@ -586,7 +592,8 @@ function slideShowHouse(){
 </div>
 
 <!-- Last Page -->
-<div class="lastpage">
+<div id="lastpage">
+    <!--
     <div class="contact">
         <h3><strong>Contact us</strong></h3>
         <hr style="border-color:#a9a9a9">
@@ -599,6 +606,7 @@ function slideShowHouse(){
     <div class="footer">
         <strong>Thank you for visiting our website.</strong>
     </div>
+    -->
 </div>
 </body>
 </html>
