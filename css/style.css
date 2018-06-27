@@ -170,7 +170,7 @@ svg{
 }
 
 .bgimg {
-    background-image:url("assets/images/living_room4.jpg");
+    background-image:url("../assets/images/living_room4.jpg");
     background-attachment:fixed;
     background-repeat:no-repeat;
     background-size:100% auto;
@@ -178,36 +178,25 @@ svg{
     height:85vh;
 }
 #bgimg4 {
-    background-image:url("assets/images/parallax/100_3696.JPG");
+    background-image:url("../assets/images/parallax/100_3696.JPG");
 }
 #bgimg5 {
-    background-image:url("assets/images/parallax/Image(202).jpg");
+    background-image:url("../assets/images/parallax/Image(202).jpg");
 }
 #bgimg6 {
-    background-image:url("assets/images/parallax/100_1049.JPG");
+    background-image:url("../assets/images/parallax/100_1049.JPG");
 }
 
-
-
-
-/*@media only screen and (max-device-width: 768px) {
-    .bgimg {
-        background-attachment: scroll;
-    }
-}*/
-
-
-
 #bgimg1 {
-    background-image:url("assets/images/parallax/100_2621.JPG");
+    background-image:url("../assets/images/parallax/100_2621.JPG");
 }
 
 #bgimg2 {
-    background-image:url("assets/images/parallax/100_3650.JPG");
+    background-image:url("../assets/images/parallax/100_3650.JPG");
 }
 
 #bgimg3 {
-    background-image:url("assets/images/parallax/100_2644.JPG");
+    background-image:url("../assets/images/parallax/100_2644.JPG");
 }
 
 
@@ -216,10 +205,10 @@ svg{
     width:100%;
     height:100%;
     margin-top:5vh;
-    background-image:url("assets/images/living_room4.jpg");
+    background:url("../assets/images/living_room4.jpg");
     background-attachment:fixed;
     background-repeat:no-repeat;
-    background-size:100% auto;
+    background-size:100% auto;*/
     overflow:hidden;
     display:table;
 }
@@ -239,11 +228,6 @@ svg{
     font-family:'Open Sans',sans-serif;
     font-size:16px;
     font-style:italic;
-    /*padding-bottom:30px;
-    margin-left:20vw;
-    margin-right:20vw;
-    position:relative;
-    text-align: center;*/
     display:inline-block;
     text-align:center;
     margin-left:20vw;
