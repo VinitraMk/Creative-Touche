@@ -6,8 +6,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
 <link rel="stylesheet" href="css/style.css">
@@ -17,7 +17,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 </script>-->
 <script type="text/javascript">
-/*$(document).ready(function()
+$(document).ready(function()
         {
             $(window).scroll(function()
             {
@@ -31,7 +31,7 @@
                     } 
                 });
             });
-        });*/
+        });
 </script>
 <script type="text/javascript">
 window.onscroll=function(){ scrollFunction() };
@@ -52,9 +52,10 @@ function topFunction() {
 </script>
 <script>
 $(document).ready(function(){
-    $("#officemodal").click(function(event){
+    $(".modal-dialog modal-lg").click(function(event){
             event.stopPropogation();
             var offmodal=true;
+            var houmodal=true;
     });
 });
 </script>
@@ -62,13 +63,15 @@ $(document).ready(function(){
 $(document).ready(function() {
         
    $("#carousel-example-generic-office").carousel({interval:2000});
+   var id;
 
    $(".card-img-office").click(function(){
 
      var content = $("#carousel-office");
      content.empty();  
   
-     var id = this.id;  
+     id = this.id;  
+     console.log(id)
      var repo = $(".card-img-office");
      var repoCopy = repo.filter("#"+id).clone();
      var active = repoCopy.first();
@@ -76,10 +79,68 @@ $(document).ready(function() {
      //title.html(active.find("img").attr("title"));
   	 content.append(repoCopy);
      $("#officemodal").modal("show");
-     setTimeout(slideShowOffice,2000);
+     //setTimeout(slideShowOffice,2000);
   });
+    $("#nextoffice").click(function() {
+        var content=$("#carousel-office");
+        content.empty();
+        var repo=$(".card-img-office");
+        console.log(id);
+        var tid=id;
+        tid=tid.replace(/^\D+/g,'');
+        console.log('Tid',tid);
+        inid=parseInt(tid);
+        inid=(inid+13)%12;
+        /*if(inid<11)
+            inid++
+        else
+            inid=0;*/
+        id="im"+inid;
+        console.log(id);
+        var repoCopy=repo.filter("#"+id).clone();
+        var active=repoCopy.first();
+        active.addClass("active");
+        content.append(repoCopy);
+        $("officemodal").modal("show");
+    });
+    $("#prevoffice").click(function() {
+        var content=$("#carousel-office");
+        content.empty();
+        var repo=$(".card-img-office");
+        console.log(id);
+        var tid=id;
+        tid=tid.replace(/^\D+/g,'');
+        console.log('Tid',tid);
+        inid=parseInt(tid);
+        inid=(inid-1+12)%12;
+        /*if(inid<11)
+            inid++
+        else
+            inid=0;*/
+        id="im"+inid;
+        console.log(id);
+        var repoCopy=repo.filter("#"+id).clone();
+        var active=repoCopy.first();
+        active.addClass("active");
+        content.append(repoCopy);
+        $("officemodal").modal("show");
+    });
+
+
+
 });
 </script>
+<script>
+/*$(document).ready(function() {
+    $("#nextoffice").click(function() {
+        var id=this.id;
+        var repo=$(".card-img-office");
+        var content=$("#officemodal");
+        console.log(content);
+    });
+});*/
+</script>
+<!--
 <script>
 function slideShowOffice(){
     var id;
@@ -103,7 +164,8 @@ function slideShowOffice(){
     }(i));
     }
 }
-</script>
+</script>-->
+<!--
 <script>
 $(document).ready(function(){
     $("#housemodal").click(function(event){
@@ -111,18 +173,19 @@ $(document).ready(function(){
         var houmodal=true;
     });
 });
-</script>
+</script>-->
 <script>
 $(document).ready(function() {
         
    $("#carousel-example-generic-house").carousel({interval:2000});
+   var id;
 
    $(".card-img").click(function(){
 
      var content = $("#carousel-house");
      content.empty();  
   
-  	 var id = this.id;  
+  	 id = this.id;  
      var repo = $(".card-img");
      var repoCopy = repo.filter("#"+id).clone();
      var active = repoCopy.first();
@@ -130,10 +193,55 @@ $(document).ready(function() {
      //title.html(active.find("img").attr("title"));
   	 content.append(repoCopy);
   	 $("#housemodal").modal("show");
-     setTimeout(slideShowHouse,2000);
+     //setTimeout(slideShowHouse,2000);
   });
+   $("#nexthouse").click(function() {
+        var content=$("#carousel-house");
+        content.empty();
+        var repo=$(".card-img");
+        console.log(id);
+        var tid=id;
+        tid=tid.replace(/^\D+/g,'');
+        console.log('Tid',tid);
+        inid=parseInt(tid);
+        inid=(inid+17)%16;
+        /*if(inid<11)
+            inid++
+        else
+            inid=0;*/
+        id="img"+inid;
+        console.log(id);
+        var repoCopy=repo.filter("#"+id).clone();
+        var active=repoCopy.first();
+        active.addClass("active");
+        content.append(repoCopy);
+        $("#housemodal").modal("show");
+    });
+   $("#prevhouse").click(function() {
+        var content=$("#carousel-house");
+        content.empty();
+        var repo=$(".card-img");
+        console.log(id);
+        var tid=id;
+        tid=tid.replace(/^\D+/g,'');
+        console.log('Tid',tid);
+        inid=parseInt(tid);
+        inid=(inid-1+16)%16;
+        /*if(inid<11)
+            inid++
+        else
+            inid=0;*/
+        id="img"+inid;
+        console.log(id);
+        var repoCopy=repo.filter("#"+id).clone();
+        var active=repoCopy.first();
+        active.addClass("active");
+        content.append(repoCopy);
+        $("#housemodal").modal("show");
+    });
 });
 </script>
+<!--
 <script>
 function slideShowHouse(){
     var id;
@@ -159,7 +267,7 @@ function slideShowHouse(){
 }
 
 </script>
-
+    -->
 </head>
 <body>
 
@@ -416,13 +524,13 @@ function slideShowHouse(){
                         <!-- Wrapper for carousel -->
                         <div class="carousel-inner" id="carousel-house" style="height:500px;">
                         </div>
-                        <!-- Controls 
-                        <a class="left carousel-control" href="#carousel-example-generic-house" role="button" data-slide="prev">
+                        Controls 
+                        <a id="prevhouse" class="left carousel-control" href="#carousel-example-generic-house" role="button" data-slide="prev">
                             <span class="glyphicon glyphicon-menu-left" style="margin-top:250px"></span>
                         </a>
-                        <a class="right carousel-control" href="#carousel-example-generic-house" role="button" data-slide="next">
+                        <a id="nexthouse" class="right carousel-control" href="#carousel-example-generic-house" role="button" data-slide="next">
                             <span class="glyphicon glyphicon-menu-right" style="margin-top:250px"></span>
-                        </a>-->
+                        </a>
                     </div>
                 </div>
             </div>
@@ -519,17 +627,44 @@ function slideShowHouse(){
         <div id="officemodal" class="modal fade" role="dialog" align="center">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content" style="height:500px;">
-                    <div id="carousel-example-generic-office" class="carousel slide" data-ride="carousel" data-interval="2000">
+                    <div id="carousel-example-generic-office" class="carousel slide" data-ride="carousel" data-interval="false">
                         <!-- Wrapper for carousel -->
+                        <!-- remove this for slideshow 
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic-office" data-slide-to="0"></li>
+                            <li data-target="#carousel-example-generic-office" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic-office" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic-office" data-slide-to="3"></li>
+                            <li data-target="#carousel-example-generic-office" data-slide-to="4"></li>
+                            <li data-target="#carousel-example-generic-office" data-slide-to="5"></li>
+                            <li data-target="#carousel-example-generic-office" data-slide-to="6"></li>
+                            <li data-target="#carousel-example-generic-office" data-slide-to="7"></li>
+                            <li data-target="#carousel-example-generic-office" data-slide-to="8"></li>
+                            <li data-target="#carousel-example-generic-office" data-slide-to="9"></li>
+                            <li data-target="#carousel-example-generic-office" data-slide-to="10"></li>
+                            <li data-target="#carousel-example-generic-office" data-slide-to="11"></li>
+                        </ol>-->
                         <div class="carousel-inner" id="carousel-office" style="height:500px;">
+                            <!-- remove this for slide show 
+                            <div class="item active"> <img src="http://imgur.com/lCyYeaI.jpg"></div>
+                            <div class="item"> <img src="http://imgur.com/zHjzpoK.jpg"></div>
+                            <div class="item"> <img src="http://imgur.com/HQKo8CR.jpg"></div>
+                            <div class="item"> <img src="http://imgur.com/HQKo8CR.jpg"></div>
+                            <div class="item"> <img src="http://imgur.com/HQKo8CR.jpg"></div>
+                            <div class="item"> <img src="http://imgur.com/HQKo8CR.jpg"></div>
+                            <div class="item"> <img src="http://imgur.com/HQKo8CR.jpg"></div>
+                            <div class="item"> <img src="http://imgur.com/HQKo8CR.jpg"></div>
+                            <div class="item"> <img src="http://imgur.com/HQKo8CR.jpg"></div>
+                            <div class="item"> <img src="http://imgur.com/HQKo8CR.jpg"></div>
+                            <div class="item"> <img src="http://imgur.com/HQKo8CR.jpg"></div>
+                            <div class="item"> <img src="http://imgur.com/HQKo8CR.jpg"></div>-->
                         </div>
-                        <!-- Controls 
-                        <a class="left carousel-control" href="#carousel-example-generic-office" role="button" data-slide="prev">
+                        <a id="prevoffice" class="left carousel-control" href="#carousel-example-generic-office" role="button" data-slide="prev">
                             <span class="glyphicon glyphicon-menu-left" style="margin-top:250px"></span>
                         </a>
-                        <a class="right carousel-control" href="#carousel-example-generic-office" role="button" data-slide="next">
+                        <a id="nextoffice" class="right carousel-control" href="#carousel-example-generic-office" role="button" data-slide="next">
                             <span class="glyphicon glyphicon-menu-right" style="margin-top:250px"></span>
-                        </a>-->
+                        </a>
                     </div>
                 </div>
             </div>
