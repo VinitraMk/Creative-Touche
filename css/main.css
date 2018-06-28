@@ -174,8 +174,8 @@ iframe {
 
 .wrap-contact100 {
   /*width: 670px;*/
-    width:40vw;
-    height:90vh;
+    width:35vw;
+    height:80vh;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -320,12 +320,12 @@ iframe {
 
 /*---------------------------------------------*/
 input.input100 {
-  height: 45px;
+  height: 30px;
 }
 
 
 textarea.input100 {
-  min-height: 60px;
+  max-height: 35px;
   padding-top: 14px;
   padding-bottom: 13px;
 }
