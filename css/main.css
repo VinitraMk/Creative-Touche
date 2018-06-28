@@ -175,7 +175,7 @@ iframe {
 .wrap-contact100 {
   /*width: 670px;*/
     width:40vw;
-    height:70vh;
+    height:90vh;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -259,10 +259,10 @@ iframe {
 [ Input ]*/
 
 .wrap-input100 {
-  width: 47%;
+  width: 100%;
   border-bottom: 1px solid #b2b2b2;
   /*margin-bottom: 26px;*/
-  display:inline-block;
+  /*display:inline-block;*/
   padding-top:1vh;
   padding-right:0.5vw;
 }
@@ -350,7 +350,7 @@ textarea.input100 {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 3vh;
+  padding-top: 2vh;
 }
 
 .contact100-form-btn {
