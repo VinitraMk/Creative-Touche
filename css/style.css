@@ -82,6 +82,7 @@ svg{
     height:100%;
     width:100%;
     clear:left;
+    background-color:#a9a9a9;
 }
 .gallery{
     font-family:'Tangerine',serif;
@@ -179,12 +180,21 @@ svg{
 }
 #bgimg4 {
     background-image:url("../assets/images/parallax/100_3696.JPG");
+    float:left;
+    margin-left:2vw;
+
 }
 #bgimg5 {
-    background-image:url("../assets/images/parallax/Image(202).jpg");
+    /*background-image:url("../assets/images/parallax/Image(202).jpg");*/
+    background-image:url("../assets/images/parallax/IMG-20141201-WA0003.jpg");
+    float:right;
+    margin-right:2vw;
 }
 #bgimg6 {
     background-image:url("../assets/images/parallax/100_1049.JPG");
+    float:left;
+    margin-left:2vw;
+    background-size:80% auto;
 }
 
 #bgimg1 {
@@ -224,7 +234,7 @@ svg{
     vertical-align:middle;
 }
 .fadein{
-    color:#FFF;
+    color:#ffffff;
     font-family:'Open Sans',sans-serif;
     font-size:16px;
     font-style:italic;
