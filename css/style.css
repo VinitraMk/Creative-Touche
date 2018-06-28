@@ -218,7 +218,8 @@ svg{
     background:url("../assets/images/living_room4.jpg");
     background-attachment:fixed;
     background-repeat:no-repeat;
-    background-size:100% auto;*/
+    /*background-size:100% auto;*/
+    background-size:cover;
     overflow:hidden;
     display:table;
 }
@@ -243,5 +244,7 @@ svg{
     margin-left:20vw;
     margin-right:20vw;
 }
-
+p.fadeinfo {
+    color:#fff;
+}
 
