@@ -698,7 +698,7 @@ function slideShowHouse(){
 				</span>
 			</div>
 
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" name="contactform" method="post" action="./php/send.php" id="contactform">
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">Full Name:</span>
 					<input class="input100" type="text" name="name">
@@ -724,7 +724,7 @@ function slideShowHouse(){
 				</div>
 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+					<button class="contact100-form-btn" type="submit" name="submit" form="contactform">
 						<span>
 							Submit
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
