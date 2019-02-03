@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+<title>Creative Touche</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/util.css">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	
+<!--
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>-->
+<script type="text/javascript">
+$(document).ready(function()
+        {
+            $(window).scroll(function()
+            {
+                $('.fadein').each( function(j)
+                {
+                    var top_of_object= $(this).position().top;
+                    var bottom_of_window= $(window).scrollTop() + $(window).height();
+                    if(bottom_of_window > top_of_object)
+                    { 
+                        $(this).animate({ 'opacity':'1' },1000);
+                    } 
+                });
+            });
+        });
+</script>
+<script type="text/javascript">
+window.onscroll=function(){ scrollFunction() };
+function scrollFunction(){
+    if(document.body.scrollTop > 20 || 
+            document.documentElement.scrollTop >20){
+        document.getElementById("topbtn").style.display="block";
+    }
+    else{
+        document.getElementById("topbtn").style.display="none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop=0;
+    document.documentElement.scrollTop=0;
+}
+</script>
+<script>
+$(document).ready(function(){
+    $(".modal-dialog modal-lg").click(function(event){
+            event.stopPropogation();
+            var offmodal=true;
+            var houmodal=true;
+    });
+});
+</script>
+<script>
+$(document).ready(function() {
+        
+   $("#carousel-example-generic-office").carousel({interval:false});
+   var id;
+
+   $(".card-img-office").click(function(){
+
+     var content = $("#carousel-office");
+     content.empty();  
+  
+     id = this.id;  
+     console.log(id)
+     var repo = $(".card-img-office");
+     var repoCopy = repo.filter("#"+id).clone();
+     var active = repoCopy.first();
+     active.addClass("active");
+     //title.html(active.find("img").attr("title"));
+  	 content.append(repoCopy);
+     $("#officemodal").modal("show");
+     //setTimeout(slideShowOffice,2000);
+  });
+    $("#nextoffice").click(function() {
+        var content=$("#carousel-office");
+        content.empty();
+        var repo=$(".card-img-office");
+        console.log(id);
+        var tid=id;
+        tid=tid.replace(/^\D+/g,'');
+        console.log('Tid',tid);
+        inid=parseInt(tid);
+        inid=(inid+13)%12;
+        /*if(inid<11)
+            inid++
+        else
+            inid=0;*/
+        id="im"+inid;
+        console.log(id);
+        var repoCopy=repo.filter("#"+id).clone();
+        var active=repoCopy.first();
+        active.addClass("active");
+        content.append(repoCopy);
+        $("officemodal").modal("show");
+    });
+    $("#prevoffice").click(function() {
+        var content=$("#carousel-office");
+        content.empty();
+        var repo=$(".card-img-office");
+        console.log(id);
+        var tid=id;
+        tid=tid.replace(/^\D+/g,'');
+        console.log('Tid',tid);
+        inid=parseInt(tid);
+        inid=(inid-1+12)%12;
+        /*if(inid<11)
+            inid++
+        else
+            inid=0;*/
+        id="im"+inid;
+        console.log(id);
+        var repoCopy=repo.filter("#"+id).clone();
+        var active=repoCopy.first();
+        active.addClass("active");
+        content.append(repoCopy);
+        $("officemodal").modal("show");
+    });
+
+
+
+});
+</script>
+<script>
+/*$(document).ready(function() {
+    $("#nextoffice").click(function() {
+        var id=this.id;
+        var repo=$(".card-img-office");
+        var content=$("#officemodal");
+        console.log(content);
+    });
+});*/
+</script>
+<!--
+<script>
+function slideShowOffice(){
+    var id;
+    var rep=$(".card-img-office");
+    var content=$("#carousel-office");
+    content.empty();
+    $("#carousel-example-generic-office").carousel({interval:2000});
+    for(var i=0;i<12;i++){
+        (function(i){
+            setTimeout(function(){
+                id="#im"+i;
+                var repocopy=rep.filter(id).clone();
+                var active=repocopy.first();
+                active.addClass("active");
+                content=$("#carousel-office");
+                content.empty();
+                content.append(repocopy);
+                if(!offmodal)
+                    $("#officemodal").modal("show");
+        },2000*i);
+    }(i));
+    }
+}
+</script>-->
+<!--
+<script>
+$(document).ready(function(){
+    $("#housemodal").click(function(event){
+        event.stopPropogation();
+        var houmodal=true;
+    });
+});
+</script>-->
+<script>
+$(document).ready(function() {
+        
+   $("#carousel-example-generic-house").carousel({interval:2000});
+   var id;
+
+   $(".card-img").click(function(){
+
+     var content = $("#carousel-house");
+     content.empty();  
+  
+  	 id = this.id;  
+     var repo = $(".card-img");
+     var repoCopy = repo.filter("#"+id).clone();
+     var active = repoCopy.first();
+     active.addClass("active");
+     //title.html(active.find("img").attr("title"));
+  	 content.append(repoCopy);
+  	 $("#housemodal").modal("show");
+     //setTimeout(slideShowHouse,2000);
+  });
+   $("#nexthouse").click(function() {
+        var content=$("#carousel-house");
+        content.empty();
+        var repo=$(".card-img");
+        console.log(id);
+        var tid=id;
+        tid=tid.replace(/^\D+/g,'');
+        console.log('Tid',tid);
+        inid=parseInt(tid);
+        inid=(inid+17)%16;
+        /*if(inid<11)
+            inid++
+        else
+            inid=0;*/
+        id="img"+inid;
+        console.log(id);
+        var repoCopy=repo.filter("#"+id).clone();
+        var active=repoCopy.first();
+        active.addClass("active");
+        content.append(repoCopy);
+        $("#housemodal").modal("show");
+    });
+   $("#prevhouse").click(function() {
+        var content=$("#carousel-house");
+        content.empty();
+        var repo=$(".card-img");
+        console.log(id);
+        var tid=id;
+        tid=tid.replace(/^\D+/g,'');
+        console.log('Tid',tid);
+        inid=parseInt(tid);
+        inid=(inid-1+16)%16;
+        /*if(inid<11)
+            inid++
+        else
+            inid=0;*/
+        id="img"+inid;
+        console.log(id);
+        var repoCopy=repo.filter("#"+id).clone();
+        var active=repoCopy.first();
+        active.addClass("active");
+        content.append(repoCopy);
+        $("#housemodal").modal("show");
+    });
+});
+</script>
+<!--
+<script>
+function slideShowHouse(){
+    var id;
+    var rep=$(".card-img");
+    var content=$("#carousel-house");
+    content.empty();
+    $("#carousel-example-generic-house").carousel({interval:2000});
+    for(var i=0;i<16;i++){
+        (function(i){
+            setTimeout(function(){
+                id="#img"+i;
+                var repocopy=rep.filter(id).clone();
+                var active=repocopy.first();
+                active.addClass("active");
+                content=$("#carousel-house");
+                content.empty();
+                content.append(repocopy);
+                if(!houmodal)
+                    $("#housemodal").modal("show");
+        },2000*i);
+    }(i));
+    }
+}
+
+</script>
+    -->
+</head>
+<body>
+
+<img class="logo" onclick="topFunction()" id="topbtn" src="assets/images/arrowUp.png"/>
+<svg viewBox="0 0 600 300">
+
+  <!-- Symbol with text -->
+  <symbol id="s-text">
+    <text text-anchor="middle"
+          x="50%"
+          y="50%"
+          dy=".35em"
+          class="text--line"
+          >
+      Creative Touche` 
+    </text>    
+  </symbol>
+
+  <!-- Clippath  with text -->
+  <clippath id="cp-text">
+    <text text-anchor="middle"
+          x="50%"
+          y="50%"
+          dy=".35em"
+          class="text--line"
+          >
+      Creative Touche`
+    </text>
+  </clippath>
+
+  <!-- Group with clippath for text-->
+  <g clip-path="url(#cp-text)" class="colortext">
+    <!-- Animated shapes inside text -->
+    <rect
+          width="100%"
+          height="100%"         
+          class="anim-shape"
+          ></rect>
+    <rect
+          width="80%"
+          height="100%"         
+          class="anim-shape"
+          ></rect>
+    <rect
+          width="60%"
+          height="100%"         
+          class="anim-shape"
+          ></rect>
+    <rect
+          width="40%"
+          height="100%"         
+          class="anim-shape"
+          ></rect>
+    <rect
+          width="20%"
+          height="100%"         
+          class="anim-shape"
+          ></rect>
+  </g>
+
+  <!-- Transparent copy of text to keep
+         patterned text selectable -->
+  <use xlink:href="#s-text"
+       class="text--transparent"></use>
+
+</svg>
+<div class="info-area">
+    <div class="bgimg" id="bgimg4"></div>
+</div>
+<div class="writing" id="bgimg1">
+    <div class="tint">
+        <div class="fadein">
+            <h2>Interior Designers</h2></br>
+            <p class="fadeinfo"> We are basically Interior Designers  since last 26 years ie., since 1991.  We have a full team of Carpenters, Masons, Painters, Electricians, Plumbe
+            rs & other TEAM related to interior designing.</p></br>
+            <p class="fadeinfo">Along with undertaking Interior Designing we started doing Interior Designing in accordance with Vaastu Shastra  in the year 1997 ie since last 20 ye
+            ars to give Value Addition to our Clients.</p></br>
+            <p class="fadeinfo">We spend lakhs of money in doing our house to live in the house happily and we want all of our Family Members to achieve their POTENTIAL. Vaastu Shas
+            tra Science creates a conducive atmosphere of UNITY, LOVE, WEALTH & PROSPERITY.</p></br>
+            <p class="fadeinfo">We also give Vaastu Shastra Consultancy for Residences, Flats, Offices, Shops, Land & Building, Factories, etc. As per our customer's requirement.we 
+            can design your interior either as per vaastu or without vaastu.  We believe that any house or offices designed as per VAASTU SHASTRA produces excellent
+            results. You can visit our website <a href="http://skywindsystems.com/demo/VaastuTreasure/"><strong>www.vaastutreasure.com</strong></a> to know more about Vaastu Shastra
+            , What is Vaastu? And Why Vaastu Shastra Science to be followed while doing Interior Designing.</p>
+        </div>
+    </div>
+</div>
+<div class="info-area">
+    <div class="bgimg" id="bgimg5"></div>
+</div>
+
+<div class="writing" id="bgimg2">
+    <div class="tint">
+        <div class="fadein">
+            <h3>Interior Designing</h3>
+            We undertake Interior Designing Contracts of Residences, Offices, Flats, Bungalows, Shops, Land & Building, Factories, etc.<br>
+            We do the following work related to Interior Designing as per our Customer's Requirement:<br>
+            <b>CIVIL WORK</b> - Flooring, Wall Tiling, Kitchen Platform and other Construction works.<br><br>
+            <b>PAINTING</b> - Asian Paints Acrylic Distemper, Plastic Emulsion, Royale Luxury Emulsion.<br><br>
+            <b>PLUMBING</b> - Concealed Plumbing for Kitchen, W.C and Bathroom.<br><br>
+            <b>FURNITURE</b> - All types of Carpentry Work like Bed, Wardrobes, Wall Unit, etc.<br><br>
+            <b>ELECTRICAL</b> - Concealed electrical wiring using reputed branded products.<br><br>
+            <b>PARTITION</b> - Aluminium Section with Powder Coating and Anodising.<br><br>
+            <b>POP FALSE & MODULAR FALSE CEILING</b>
+        </div>
+    </div>
+</div>
+<div class="info-area">
+    <div class="bgimg" id="bgimg6"></div>
+</div>
+
+<div class="writing" id="bgimg3">
+    <div class="tint">
+        <div class="fadein">
+            <h3>Our Specialities</h3>
+            Designing your place as per your requirement and carefully looking into all the aspect of VAASTUSHASTRA.<br><br>
+            Designing every room as per Vaastushastra.<br><br>
+            Using Color to give good ambience but to remain within Vaastushastra. For ex. We should never use Blue Color in the South Wall. Such subtle things will 
+            be taken care of while designing your home.<br><br>
+            Integrity & Transparency in our dealings.<br><br>
+            Excellent Quality & Lifelong Service.<br><br>
+            Elegant Design & Excellent Workmanship.<br><br>
+            Only Company doing Interior Designing in accordance with Vaastushastra.<br><br>
+            We value your hard earned money and hence the insistence on Vaastushastra.<br><br>
+            We believe that when you spend lakhs in setting up a Company, the Company should run for many years and should grow inspite of cut throat competition.
+            <br><br>
+        </div>
+
+    </div>
+</div>
+
+<!--Gallery-->
+<h1 align="center" style="font-family: 'Tangerine','serif';margin-top:5vh;">Gallery</h1>
+<!--
+<div class="gallery">
+    <div class="house">
+        <div class="house-grid">
+            <h3 align="center">Home Interior</h3>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="http://imgur.com/g2sRMS2.jpg" id="img0"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="http://imgur.com/6Uj0eF2.jpg" id="img1"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="http://imgur.com/vDpJ4DO.jpg" id="img2"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="https://imgur.com/dqBvpND.jpg" id="img3"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+
+
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="http://imgur.com/rKvHlkx.jpg" id="img4"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="http://imgur.com/Pkt8rTr.jpg" id="img5"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="https://imgur.com/6yLJQrc.jpg" id="img6"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="https://imgur.com/BHS4Lgp.jpg" id="img7"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="https://imgur.com/dbSIHox.jpg" id="img8"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="https://imgur.com/3hfjKS9.jpg" id="img9"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="https://imgur.com/wtmxx5a.jpg" id="img10"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="http://imgur.com/Lo2MHjO.jpg" id="img11"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div> 
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="http://imgur.com/vSF1nQi.jpg" id="img12"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="https://imgur.com/4cBCVE5.jpg" id="img13"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="https://imgur.com/twLf916.jpg" id="img14"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="http://imgur.com/wzly0PY.jpg" id="img15"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="http://imgur.com/wzly0PY.jpg" id="img15"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-container">
+                    <img class="card-img img-responsive" src="http://imgur.com/wzly0PY.jpg" id="img16"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+        </div>
+        <div id="housemodal" class="modal fade" role="dialog" align="center">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="height:500px;">
+                    <div id="carousel-example-generic-house" class="carousel slide" data-ride="carousel">
+                        Wrapper for carousel 
+                        <div class="carousel-inner" id="carousel-house" style="height:500px;">
+                        </div>
+                        Controls 
+                        <a id="prevhouse" class="left carousel-control" href="#carousel-example-generic-house" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-menu-left" style="margin-top:250px"></span>
+                        </a>
+                        <a id="nexthouse" class="right carousel-control" href="#carousel-example-generic-house" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-menu-right" style="margin-top:250px"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="office">
+        <div class="office-grid">
+            <h3>Office Interior</h3>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="http://imgur.com/lCyYeaI.jpg" id="im0"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="http://imgur.com/zHjzpoK.jpg" id="im1"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="http://imgur.com/HQKo8CR.jpg" id="im2"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="https://imgur.com/tlJrMhy.jpg" id="im3"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="http://imgur.com/di4lGxY.jpg" id="im4"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="http://imgur.com/i9ukOa9.jpg" id="im5"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="http://imgur.com/ZTbtlYd.jpg" id="im6"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="http://imgur.com/oSVTZXu.jpg" id="im7"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div> 
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="http://imgur.com/se2P1OK.jpg" id="im8"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="http://imgur.com/P4qi9js.jpg" id="im9"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="https://imgur.com/WWNLsaO.jpg" id="im10"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div> 
+            <div class="icard">
+                <div class="card-img-container">
+                    <img class="card-img-office img-responsive" src="https://imgur.com/cghDb6a.jpg" id="im11"/>
+                </div>
+                <div class="card-meta">
+                </div>
+            </div>
+        </div> 
+        <div id="officemodal" class="modal fade" role="dialog" align="center">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="height:500px;">
+                    <div id="carousel-example-generic-office" class="carousel slide" data-ride="carousel" data-interval="false">
+                        Wrapper for carousel 
+                        remove this for slideshow 
+                        <div class="carousel-inner" id="carousel-office" style="height:500px;">
+                        </div>
+                        <a id="prevoffice" class="left carousel-control" href="#carousel-example-generic-office" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-menu-left" style="margin-top:250px"></span>
+                        </a>
+                        <a id="nextoffice" class="right carousel-control" href="#carousel-example-generic-office" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-menu-right" style="margin-top:250px"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<div class="large-space"></div>
+<!-- Last Page -->
+<div class="lastpage">
+	<div class="wrap-contact100">
+			<div class="contact100-form-title" style="background-image: url(assets/images/bg-01.jpg);">
+				<span class="contact100-form-title-1">
+					Contact Us
+				</span>
+
+				<span class="contact100-form-title-2">
+                    S V Muralikrishnan</br>
+                    Interior Designer and Vaastu Shastra Consultant</br>
+                    Mobile No: +91-9820477563
+				</span>
+			</div>
+
+			<form class="contact100-form validate-form" name="contactform" method="post" action="./php/send.php" id="contactform">
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">Full Name:</span>
+					<input class="input100" type="text" name="name">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<span class="label-input100">Email:</span>
+					<input class="input100" type="text" name="email">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Phone is required">
+					<span class="label-input100">Phone:</span>
+					<input id="phoneinput" class="input100" type="text" name="phone">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<span class="label-input100">Message:</span>
+					<textarea class="input100" name="message"></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" type="submit" name="submit" form="contactform">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+
+	
+        <div id="dropDownSelect1"></div>
+
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<script src="js/main.js"></script>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+    </script>
+
+    <!--
+    <div class="contact">
+        <h3><strong>Contact us</strong></h3>
+        <hr style="border-color:#a9a9a9">
+            <p>S V Muralikrishnan <br>
+                Interior Designers & Vaastu Shastra Consultant<br>
+                Mobile No: 9820477563<br>
+                Please contact us anytime! We look forward to hearing from you.
+            </p>
+    </div>-->
+    <div class="large-space"></div>
+    <div class="footer">
+    <strong>Thank you for visiting our website.</strong>
+    </div>
+</div>
+</body>
+</html>
+

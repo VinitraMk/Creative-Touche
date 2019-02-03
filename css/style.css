@@ -131,7 +131,7 @@ svg{
 .card-meta {
     height:30px;
 }
-.card {
+.icard {
     float:left;
     width:25%;
 }
@@ -150,9 +150,6 @@ svg{
 .glyphicon
 {
     font-size:50px;
-}
-.modal-content{
-    margin-top:15vh;
 }
 #carousel-example-generic-house, #carousel-example-generic-office{
     background-color:#000000;
@@ -184,8 +181,9 @@ svg{
     margin-left:2vw;
 }
 #bgimg5 {
-    /*background-image:url("../assets/images/parallax/Image(202).jpg");*/
-    background-image:url("../assets/images/parallax/IMG-20141201-WA0003.jpg");
+    /*background-image:url("../assets/images/parallax/Image(202).jpg");
+    background-image:url("../assets/images/parallax/IMG-20141201-WA0003.jpg");*/
+    background-image:url("https://i.imgur.com/va5eVoP.jpg");
     float:right;
     margin-right:2vw;
 }
@@ -250,4 +248,212 @@ p.fadeinfo {
 .fadein a {
     color:#0690e3;
     font-size:16px;
+}
+
+.cards {
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+  max-width: 34em;
+  margin: 20% auto 0;
+}
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #ccc;
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 0 40px #000;
+  -webkit-transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
+          transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  transition: background 0.4s linear, -webkit-transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s;
+  transition: transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s, background 0.4s linear;
+  transition: transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s, background 0.4s linear, -webkit-transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.card :last-child {
+  margin-bottom: 0;
+}
+.card--next {
+  z-index: 5;
+  -webkit-transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
+          transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
+}
+.card--out {
+  -webkit-animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+          animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+  -webkit-transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+          transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  z-index: 1;
+  background: #bbb;
+}
+@-webkit-keyframes card-out {
+  0% {
+    z-index: 20;
+    -webkit-transform: translateY(0px) rotate(-4deg);
+            transform: translateY(0px) rotate(-4deg);
+  }
+  50% {
+    -webkit-transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+            transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+  }
+  80% {
+    z-index: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+            transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  }
+}
+@keyframes card-out {
+  0% {
+    z-index: 20;
+    -webkit-transform: translateY(0px) rotate(-4deg);
+            transform: translateY(0px) rotate(-4deg);
+  }
+  50% {
+    -webkit-transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+            transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+  }
+  80% {
+    z-index: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+            transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  }
+}
+.card--current {
+  cursor: auto;
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+      -ms-user-select: auto;
+          user-select: auto;
+  position: relative;
+  z-index: 10;
+  opacity: 1;
+  background: #EEE;
+  -webkit-transform: rotate(-1deg) translateX(0%) scale(1);
+          transform: rotate(-1deg) translateX(0%) scale(1);
+}
+
+.btn-square {
+    position: relative;
+    border-radius:0px;
+    margin:auto;
+}
+
+/*.modal {
+  display: none;
+  position: fixed;
+  z-index:1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  overflow:auto;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}*/
+
+
+.modal {
+    display:none;
+}
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  /*width: 90%;
+  max-width: 1200px;*/
+}
+
+ /* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 25px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Hide the slides by default */
+.slider-home-img, .slider-office-img {
+    margin:auto;
+    height:100%;
+}
+
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
